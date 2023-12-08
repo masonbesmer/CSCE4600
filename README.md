@@ -1,18 +1,39 @@
-# Project Files CSCE 4600
-[![golangci-lint](https://github.com/jh125486/CSCE4600/actions/workflows/golangci-lint.yml/badge.svg?branch=main)](https://github.com/jh125486/CSCE4600/actions/workflows/golangci-lint.yml)
-![Coverage](https://img.shields.io/badge/Coverage-81.3%25-brightgreen)
+# Project 2: Shell Builtins
 
-## Operating Systems
+[![golangci-lint](https://github.com/masonbesmer/CSCE4600Project2/actions/workflows/golangci-lint.yml/badge.svg?branch=main)](https://github.com/masonbesmer/CSCE4600Project2/actions/workflows/golangci-lint.yml)
+![Coverage](https://img.shields.io/badge/Coverage-66.7%25-yellow)
 
-Concepts in operating system analysis and design. General topics of process, resource and file management are presented and analyzed in the context of different system architectures and performance constraints.
+## Description
 
-## [Project 1: Process Scheduler](https://github.com/jh125486/CSCE4600/tree/main/Project1)
+For this project we'll be adding commands to a simple shell. 
 
+The shell is already written, but you will choose five (5) shell builtins (or shell-adjacent) commands to rewrite into Go, and integrate into the Go shell.
 
-You can't take an operating systems class without programming a process scheduler.  It's against the Geneva code or something.
-Design a program that implements several different CPU scheduling algorithms.
+There are many builtins or shell-adjacent commands to pick from: 
+[Bourne Shell Builtins](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html), 
+[Bash Builtins](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html,), and 
+[Built-in csh and tcsh Commands](https://docstore.mik.ua/orelly/linux/lnut/ch08_09.htm).
 
+Feel free to pick from `sh`, `bash`, `csh`, `tcsh`, `ksh` or `zsh` builtins... or if you have something else in mind, ping me and we'll work it out.
 
-## [Project 2: Shell Builtins](https://github.com/jh125486/CSCE4600/tree/main/Project2)
+As an example, two shell builtins have already been added to the package builtins:
+- `cd`
+- `env`
 
-A twist on a classic "build your own shell". The *very* basic shell is already written, but you will choose five (5) shell builtins (or shell-adjacent) commands to rewrite into Go, and integrate into the Go shell.
+## Steps
+
+1. Clone down the example input/output and skeleton `main.go`:
+
+    `git clone https://github.com/jh125486/CSCE4600`
+ 
+2. Copy the `Project2` files to your own git project.
+
+    1. In your `go.mod`, replace "jh125486" in the module line with your GitHub name, e.g.:
+
+      - "module github.com/jh125486/CSCE4600" changes to "module github.com/CoolStudent123/CSCE4600"
+  
+    2. In the `main.go`, replace "jh125486" in the imports with your package path, e.g.:
+
+      - "github.com/jh125486/CSCE4600/Project2/builtins" changes to "github.com/CoolStudent123/CSCE4600/Project2/builtins"
+
+3. Start editing the `main.go` command switch (lines 57-64) and the package `builtins` with your chosen commands.
