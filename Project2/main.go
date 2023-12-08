@@ -71,6 +71,16 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 	args := strings.Split(input, " ")
 	name, args := args[0], args[1:]
 
+	for k, v := range builtins.ReturnAliasMap() {
+		if k == name {
+			oldargs := args
+			args = nil
+			//args = make([]string, len(v))
+			name = v[0]
+			args = append(v[1:], oldargs...)
+		}
+	}
+
 	// Check for built-in commands.
 	// New builtin commands should be added here. Eventually this should be refactored to its own func.
 	switch name {
