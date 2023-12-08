@@ -2,12 +2,14 @@ package main
 
 import (
 	"bytes"
-	"github.com/stretchr/testify/require"
 	"io"
 	"strings"
 	"testing"
 	"testing/iotest"
 	"time"
+
+	"github.com/masonbesmer/CSCE4600/Project2/builtins"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_runLoop(t *testing.T) {
@@ -56,5 +58,13 @@ func Test_runLoop(t *testing.T) {
 				require.Empty(t, errW.String())
 			}
 		})
+	}
+}
+
+func Test_RunAlias(t *testing.T) {
+	var out bytes.Buffer
+	builtins.HandleAlias(&out, "chechers", "echo", "hello")
+	if handleInput(&out, "chechers", nil) != nil {
+		return
 	}
 }

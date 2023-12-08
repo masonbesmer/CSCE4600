@@ -18,30 +18,30 @@ func TestAlias(t *testing.T) {
 		wantErr   error
 	}{
 		{
+			name:    "alias listing empty",
+			args:    args{args: []string{}},
+			wantErr: nil,
+		},
+		{
+			name:    "specific alias print doesn't exist",
+			args:    args{args: []string{"chechers"}},
+			wantErr: nil,
+		},
+		{
 			name:    "alias creation",
-			args:    args{args: []string{"alias", "chechers", "echo", "hello"}},
+			args:    args{args: []string{"chechers", "echo", "hello"}},
 			wantErr: nil,
 		},
 		{
 			name:    "alias listing",
-			args:    args{args: []string{"alias"}},
-			wantErr: nil,
-		},
-		{
-			name:    "alias listing empty",
-			args:    args{args: []string{"alias"}},
+			args:    args{args: []string{}},
 			wantErr: nil,
 		},
 		{
 			name:    "specific alias printing",
-			args:    args{args: []string{"alias", "chechers"}},
+			args:    args{args: []string{"chechers"}},
 			wantErr: nil,
 		},
-		// {
-		// 	name:    "specific alias print doesn't exist",
-		// 	args:    args{args: []string{"alias", "chechers"}},
-		// 	wantErr: errors.New("alias not found"),
-		// },
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
