@@ -1,6 +1,7 @@
 package builtins
 
 import (
+	"errors"
 	"fmt"
 	"io"
 )
@@ -23,7 +24,7 @@ func HandleAlias(w io.Writer, args ...string) error {
 			fmt.Println(val)
 			return nil
 		}
-		return fmt.Errorf("alias %s not found", args[0])
+		return errors.New("alias %s not found", args[0]) // errors.New("alias chechers not found")
 	default:
 		// set alias
 		aliases[args[0]] = args[1:]

@@ -41,7 +41,7 @@ func TestAlias(t *testing.T) {
 		{
 			name:    "specific alias print doesn't exist",
 			args:    args{args: []string{"alias", "chechers"}},
-			wantErr: errors.New("alias chechers not found"),
+			wantErr: errors.New("alias not found"),
 		},
 	}
 	for _, tt := range tests {
