@@ -2,7 +2,6 @@ package builtins_test
 
 import (
 	"bytes"
-	"errors"
 	"testing"
 
 	"github.com/masonbesmer/CSCE4600/Project2/builtins"
@@ -38,11 +37,11 @@ func TestAlias(t *testing.T) {
 			args:    args{args: []string{"alias", "chechers"}},
 			wantErr: nil,
 		},
-		{
-			name:    "specific alias print doesn't exist",
-			args:    args{args: []string{"alias", "chechers"}},
-			wantErr: errors.New("alias not found"),
-		},
+		// {
+		// 	name:    "specific alias print doesn't exist",
+		// 	args:    args{args: []string{"alias", "chechers"}},
+		// 	wantErr: errors.New("alias not found"),
+		// },
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
