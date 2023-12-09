@@ -7,8 +7,8 @@ import (
 
 // Unalias removes an alias from the alias map.
 func Unalias(w io.Writer, args ...string) error {
-	if len(args) == 0 {
-		return fmt.Errorf("no alias provided")
+	if len(args) != 1 {
+		return fmt.Errorf("invalid format")
 	}
 	//check if alias exists
 	if _, ok := aliases[args[0]]; !ok {

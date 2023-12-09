@@ -23,7 +23,7 @@ func TestKill(t *testing.T) {
 		},
 		{
 			name:    "specific kill doesn't exist",
-			args:    args{args: []string{"65616581959516"}},
+			args:    args{args: []string{"6561658"}},
 			wantErr: nil,
 		},
 	}

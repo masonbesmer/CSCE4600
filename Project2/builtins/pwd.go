@@ -3,12 +3,11 @@ package builtins
 import (
 	"fmt"
 	"io"
-	"os"
 )
 
 // pwd prints the current working directory
-func Pwd(w io.Writer, args ...string) error {
-	wd, err := os.Getwd()
+func Pwd(dir string, err error, w io.Writer, args ...string) error {
+	wd, err := dir, err
 	if err != nil {
 		return err
 	}

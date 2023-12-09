@@ -81,6 +81,8 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 		}
 	}
 
+	pwd, err := os.Getwd()
+
 	// Check for built-in commands.
 	// New builtin commands should be added here. Eventually this should be refactored to its own func.
 	switch name {
@@ -91,7 +93,7 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 	case "echo":
 		return builtins.Echo(w, args...)
 	case "pwd":
-		return builtins.Pwd(w, args...)
+		return builtins.Pwd(pwd, err, w, args...)
 	case "kill":
 		return builtins.HandleKill(w, args...)
 	case "cd":
