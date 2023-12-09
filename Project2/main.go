@@ -92,6 +92,8 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 		return builtins.Echo(w, args...)
 	case "pwd":
 		return builtins.Pwd(w, args...)
+	case "kill":
+		return builtins.HandleKill(w, args...)
 	case "cd":
 		return builtins.ChangeDirectory(args...)
 	case "env":
