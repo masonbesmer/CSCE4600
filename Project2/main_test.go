@@ -69,4 +69,7 @@ func Test_RunAlias(t *testing.T) {
 	if handleInput(&out, "chechers", nil) != nil {
 		return
 	}
+	if (builtins.ReturnAliasMap()) == nil {
+		return
+	}
 }

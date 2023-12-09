@@ -18,6 +18,11 @@ func Test_Echo(t *testing.T) {
 		wantErr   error
 	}{
 		{
+			name:    "echo empty",
+			args:    args{args: []string{}},
+			wantErr: nil,
+		},
+		{
 			name:    "echo hello",
 			args:    args{args: []string{"hello"}},
 			wantErr: nil,
