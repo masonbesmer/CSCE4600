@@ -11,6 +11,6 @@ func Pwd(dir string, err error, w io.Writer, args ...string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Fprintf(w, "%s", wd)
+	fmt.Fprintf(w, "%s\n", wd)
 	return nil
 }
