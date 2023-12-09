@@ -73,3 +73,28 @@ func Test_RunAlias(t *testing.T) {
 		return
 	}
 }
+
+func Test_InputHandler(t *testing.T) {
+	var out bytes.Buffer
+	if handleInput(&out, "alias", nil) != nil {
+		return
+	}
+	if handleInput(&out, "unalias", nil) != nil {
+		return
+	}
+	if handleInput(&out, "pwd", nil) != nil {
+		return
+	}
+	if handleInput(&out, "kill", nil) != nil {
+		return
+	}
+	if handleInput(&out, "cd", nil) != nil {
+		return
+	}
+	if handleInput(&out, "env", nil) != nil {
+		return
+	}
+	if handleInput(&out, "test", nil) != nil {
+		return
+	}
+}
