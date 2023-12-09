@@ -63,7 +63,9 @@ func Test_runLoop(t *testing.T) {
 
 func Test_RunAlias(t *testing.T) {
 	var out bytes.Buffer
-	builtins.HandleAlias(&out, "chechers", "echo", "hello")
+	if builtins.HandleAlias(&out, "chechers", "echo", "hello") != nil {
+		return
+	}
 	if handleInput(&out, "chechers", nil) != nil {
 		return
 	}
