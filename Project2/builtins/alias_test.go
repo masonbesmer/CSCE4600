@@ -54,13 +54,13 @@ func TestAlias(t *testing.T) {
 			}
 		})
 	}
-	if builtins.Unalias(nil, "") = nil {
+	if builtins.Unalias(nil, "") == nil {
 		t.Errorf("Unalias() error = %v, wantErr %v", builtins.Unalias(nil, ""), nil)
 	}
 	if builtins.Unalias(nil, "chechers") != nil {
 		t.Errorf("Unalias() error = %v, wantErr %v", builtins.Unalias(nil, "chechers"), nil)
 	}
-	if builtins.Unalias(nil, "chechers") = nil {
+	if builtins.Unalias(nil, "chechers") == nil {
 		t.Errorf("Unalias() error = %v, wantErr %v", builtins.Unalias(nil, "chechers"), nil)
 	}
 }
