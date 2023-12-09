@@ -54,4 +54,7 @@ func TestAlias(t *testing.T) {
 			}
 		})
 	}
+	builtins.Unalias(nil, "")
+	builtins.Unalias(nil, "chechers")
+	builtins.Unalias(nil, "chechers")
 }
