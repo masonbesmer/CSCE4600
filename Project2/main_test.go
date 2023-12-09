@@ -94,7 +94,7 @@ func Test_InputHandler(t *testing.T) {
 	if handleInput(&out, "env", nil) != nil {
 		return
 	}
-	if handleInput(&out, "test", nil) != nil {
+	if executeCommand("test", "") != nil {
 		return
 	}
 }
