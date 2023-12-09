@@ -88,6 +88,8 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 		return builtins.HandleAlias(w, args...)
 	case "unalias":
 		return builtins.Unalias(w, args...)
+	case "echo":
+		return builtins.Echo(w, args...)
 	case "cd":
 		return builtins.ChangeDirectory(args...)
 	case "env":
