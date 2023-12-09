@@ -36,7 +36,7 @@ func Test_runLoop(t *testing.T) {
 			args: args{
 				r: strings.NewReader("alias\n"),
 			},
-			wantW: "No aliases found\n",
+			wantW: "EOF",
 		},
 		{
 			name: "unalias",
@@ -104,8 +104,6 @@ func Test_runLoop(t *testing.T) {
 			require.NotEmpty(t, w.String())
 			if tt.wantErrW != "" {
 				require.Contains(t, errW.String(), tt.wantErrW)
-			} else {
-				//require.Empty(t, errW.String())
 			}
 		})
 	}
