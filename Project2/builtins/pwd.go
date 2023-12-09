@@ -12,7 +12,6 @@ func Pwd(w io.Writer, args ...string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Fprintf(w, "%s", wd)
-	fmt.Fprintf(w, "\n")
+	fmt.Fprintf(w, "%s\n", wd)
 	return nil
 }
