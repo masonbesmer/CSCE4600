@@ -30,6 +30,55 @@ func Test_runLoop(t *testing.T) {
 				r: exitCmd,
 			},
 		},
+		//tests for builtins
+		{
+			name: "alias",
+			args: args{
+				r: strings.NewReader("alias\n"),
+			},
+		},
+		{
+			name: "unalias",
+			args: args{
+				r: strings.NewReader("unalias\n"),
+			},
+		},
+		{
+			name: "pwd",
+			args: args{
+				r: strings.NewReader("pwd\n"),
+			},
+		},
+		{
+			name: "kill",
+			args: args{
+				r: strings.NewReader("kill\n"),
+			},
+		},
+		{
+			name: "cd",
+			args: args{
+				r: strings.NewReader("cd\n"),
+			},
+		},
+		{
+			name: "env",
+			args: args{
+				r: strings.NewReader("env\n"),
+			},
+		},
+		{
+			name: "echo",
+			args: args{
+				r: strings.NewReader("echo\n"),
+			},
+		},
+		{
+			name: "test",
+			args: args{
+				r: strings.NewReader("test\n"),
+			},
+		},
 		{
 			name: "read error should have no effect",
 			args: args{
@@ -74,27 +123,27 @@ func Test_RunAlias(t *testing.T) {
 	}
 }
 
-func Test_InputHandler(t *testing.T) {
-	var out bytes.Buffer
-	if handleInput(&out, "alias", nil) != nil {
-		return
-	}
-	if handleInput(&out, "unalias", nil) != nil {
-		return
-	}
-	if handleInput(&out, "pwd", nil) != nil {
-		return
-	}
-	if handleInput(&out, "kill", nil) != nil {
-		return
-	}
-	if handleInput(&out, "cd", nil) != nil {
-		return
-	}
-	if handleInput(&out, "env", nil) != nil {
-		return
-	}
-	if executeCommand("test", "") != nil {
-		return
-	}
-}
+// func Test_InputHandler(t *testing.T) {
+// 	var out bytes.Buffer
+// 	if handleInput(&out, "alias", nil) != nil {
+// 		return
+// 	}
+// 	if handleInput(&out, "unalias", nil) != nil {
+// 		return
+// 	}
+// 	if handleInput(&out, "pwd", nil) != nil {
+// 		return
+// 	}
+// 	if handleInput(&out, "kill", nil) != nil {
+// 		return
+// 	}
+// 	if handleInput(&out, "cd", nil) != nil {
+// 		return
+// 	}
+// 	if handleInput(&out, "env", nil) != nil {
+// 		return
+// 	}
+// 	if executeCommand("testsdfasdf", "") != nil {
+// 		return
+// 	}
+// }
